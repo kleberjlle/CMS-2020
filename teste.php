@@ -12,6 +12,7 @@ and open the template in the editor.
     <body>
         <?php
     erro
+        // a linha anterior contém um erro
         
         ?>
     </body>
