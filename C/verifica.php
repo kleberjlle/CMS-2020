@@ -1,3 +1,7 @@
 <?php
-$email = filter_var($_POST['email'], FILTER_VALIDATOR_EMAIL);
-$senha = $_POST['senha'];
+include_once './funcoes.php';
+
+$email = validaEmail($_POST['email']);
+print_r($email);
+
+//$senha = $_POST['senha'];

@@ -5,9 +5,10 @@
         <title></title>
     </head>
     <body>
-        <?php
-        // a linha anterior contém um erro
-        
-        ?>
+        <form action="C/verifica.php" method="post">
+            <input type="email" name="email">
+            <input type="password" name="senha">
+            <input type="submit" value="enviar">
+        </form>
     </body>
 </html>
