@@ -11,7 +11,7 @@ function validaEmail($email){
 
 //verifica senha
 function validaSenha($senha){
-    
+    return $senha = password_hash($senha, PASSWORD_BCRYPT);//criptografa a senha recebida
 }
 
 //gera mensagens de alertas de acordo com o código passado
