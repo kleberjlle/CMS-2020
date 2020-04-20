@@ -1,7 +1,7 @@
 <?php
 //verifica login
 function validaLogin($senha,$email){
-    $link = conectaBancoDados();
+    $link = conectaBancoDados();//armazena conexão do BD
        
     $query = "SELECT * "//selecione todos
             . "FROM usuarios "//da tabela usuarios
@@ -9,8 +9,8 @@ function validaLogin($senha,$email){
             . "LIMIT 1";//limite a consulta a 1 registro
     $res = mysqli_query($link,$query);//executa a query anterior
     
-    $sql = mysqli_num_rows($res);
-    
+    $sql = mysqli_num_rows($res);//aramazena quantidade de linhas afetadas
+    //verifica se houve linhas afetadas
     if($sql>0){
         return true;
     }else{

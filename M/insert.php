@@ -1,15 +1,16 @@
 <?php
 function populaTabelas(){
-    $email = 'kleberjlle@gmail.com';
-    $senha = password_hash('123', PASSWORD_BCRYPT);
-    $sql = validaLogin($senha,$email);
+    $email = 'kleberjlle@gmail.com';//email padrão de cadastro
+    $senha = password_hash('123', PASSWORD_BCRYPT);//senha inicial do email cadastrado
+    $sql = validaLogin($senha,$email);//chama função que verifica se já existe este usuário e senha
     
-    if($sql){
+    //verifica se existe cadastro no retorno da validação
+    if($sql){//caso sim, exibe mensagem de existência
         $msg = "Banco de Dados já configurado.<br />"
             . "Tente acessar, com o usuário: Kleber<br />"
             . "Senha: 123";
         return $msg;
-    }else{
+    }else{//caso não, configura usuário e senha no bd
         $link = conectaBancoDados();
         //tabela usuarios
         $query = "INSERT INTO usuarios (nome, sobrenome, email, senha) "//insira na tabela usuarios os seguintes dados
