@@ -37,16 +37,15 @@
         <link href="signin.css" rel="stylesheet">
     </head>
     <body class="text-center">
-        <form class="form-signin">
+        <form class="form-signin" method="post" action="../C/verifica.php">
             <h1 class="h3 mb-3 font-weight-normal">Área Restrita</h1>
-                
-
+             
             <label for="inputEmail" class="sr-only">Email</label>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
-
+            <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
+            
             <label for="inputPassword" class="sr-only">Senha</label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
-
+            <input name="senha" type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+            
             <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
             <p class="mt-5 mb-3 text-muted">&copy; 2020-2022</p>
         </form>
