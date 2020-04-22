@@ -42,7 +42,14 @@
              
             <label for="inputEmail" class="sr-only">Email</label>
             <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
-            
+            <?php
+            if(isset($_GET['msg'])){
+                $msg = $_GET['msg'];
+                echo <<<HTML
+    <div class=\"invalid-feedback\">{$msg}</div>
+HTML;
+            }
+            ?>
             <label for="inputPassword" class="sr-only">Senha</label>
             <input name="senha" type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
             

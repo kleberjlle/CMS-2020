@@ -5,10 +5,17 @@ include_once './funcoes.php';//incorpora arquivo responsável pelas funções
 include_once '../M/desconexao.php';
 
 $email = validaEmail($_POST['email']);//passa email para validação
+
+//se email estiver incorreto
 if($email != $_POST['email']){
-    echo $email;
-}else{
-    echo $senha = validaSenha($_POST['senha'],$email);
+    header("Location: ../V/index.php?msg={$email}");//vá para index com o erro
+}else{//senão
+    $login = validaSenha($_POST['senha'], $email);//verifica se a senha coincide com a cadastrada
+    if($login === true){//se o retorno da senha for idêntico a true
+        header("Location: ../V/T/painel.php");//permita acesso ao painel
+    }else{//senão
+        echo $login;//vá para index com o erro
+    }
 }
 
 
