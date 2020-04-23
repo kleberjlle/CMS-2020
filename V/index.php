@@ -27,7 +27,7 @@
             <div class="card">
                 <div class="card-body login-card-body">
                     <p class="login-box-msg">Área Restrita</p>
-                    <form action="../C/verifica.php" method="post">
+                    <form action="../C/verificaIndex.php" method="post">
                         <div class="form-group">
                         <label class="col-form-label" for="email">
                             <?php

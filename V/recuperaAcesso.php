@@ -27,7 +27,7 @@
             <div class="card">
                 <div class="card-body login-card-body">
                     <p class="login-box-msg">Recuperar Acesso</p>
-                    <form action="../C/recuperarAcesso.php" method="post">
+                    <form action="../C/verificaRecuperaAcesso.php" method="post">
                         <div class="form-group">
                         <label class="col-form-label" for="email">
                             <?php
