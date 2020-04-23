@@ -13,7 +13,7 @@ function alertas($codigo){
                 return $msg = "A01: Email inválido.";//mensagem referente ao código passado
                 break;
             case '02':
-                return $msg = "A02: Email não cadastrado.";//mensagem referente ao código passado
+                return $msg = "A02: Email não localizado.";//mensagem referente ao código passado
                 break;
             case '03':
                 return $msg = "A03: Senha incorreta, tente novamente.";//mensagem referente ao código passado
