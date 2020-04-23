@@ -1,60 +1,84 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-        <meta name="generator" content="Jekyll v3.8.6">
-        <title>Signin Template · Bootstrap</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Ktag</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/sign-in/">
-
-        <!-- Bootstrap core CSS -->
-        <link href="../FW/bootstrap-4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link href="../FW/bootstrap-4.4.1/css/signin.css" rel="stylesheet">
-        <!-- Favicons -->
-        <meta name="theme-color" content="#563d7c">
-
-
-        <style>
-            .bd-placeholder-img {
-                font-size: 1.125rem;
-                text-anchor: middle;
-                -webkit-user-select: none;
-                -moz-user-select: none;
-                -ms-user-select: none;
-                user-select: none;
-            }
-
-            @media (min-width: 768px) {
-                .bd-placeholder-img-lg {
-                    font-size: 3.5rem;
-                }
-            }
-        </style>
-        <!-- Custom styles for this template -->
-        <link href="signin.css" rel="stylesheet">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../FW/AdminLTE-3.0.4/plugins/fontawesome-free/css/all.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+        <!-- icheck bootstrap -->
+        <link rel="stylesheet" href="../FW/AdminLTE-3.0.4/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../FW/AdminLTE-3.0.4/dist/css/adminlte.min.css">
+        <!-- Google Font: Source Sans Pro -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     </head>
-    <body class="text-center">
-        <form class="form-signin" method="post" action="../C/verifica.php">
-            <h1 class="h3 mb-3 font-weight-normal">Área Restrita</h1>
-             
-            <label for="inputEmail" class="sr-only">Email</label>
-            <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
-            <?php
-            if(isset($_GET['msg'])){
-                $msg = $_GET['msg'];
-                echo <<<HTML
-    <div class=\"invalid-feedback\">{$msg}</div>
-HTML;
-            }
-            ?>
-            <label for="inputPassword" class="sr-only">Senha</label>
-            <input name="senha" type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
-            
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
-            <p class="mt-5 mb-3 text-muted">&copy; 2020-2022</p>
-        </form>
+    <body class="hold-transition login-page">
+        <div class="login-box">
+            <div class="login-logo">
+                <a href="#"><b>K</b>tag</a>
+            </div>
+            <!-- /.login-logo -->
+            <div class="card">
+                <div class="card-body login-card-body">
+                    <p class="login-box-msg">Área Restrita</p>
+                    <form action="../C/verifica.php" method="post">
+                        <div class="form-group">
+                        <label class="col-form-label" for="email">
+                            <?php
+                                if(isset($_GET['msg1'])){
+                                    echo "<i class=\"fas fa-bell\"></i>".$_GET['msg1'];
+                                }
+                                                       
+                            ?>
+                        </label>
+                            <input type="email" name="email" class="form-control <?php if(isset($_GET['msg1'])){echo "is-warning";} if(isset($_GET['msg2'])){echo "is-valid";} ?>" id="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label" for="senha">
+                                <?php
+                                if(isset($_GET['msg2'])){
+                                    echo "<i class=\"fas fa-check\"></i>".$_GET['msg2'];
+                                }
+                                ?>
+                            </label>
+                            <input type="password" name="senha" class="form-control <?php //is-valid ?>" id="senha" placeholder="Senha" required>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="icheck-primary">
+                                    <button type="submit" class="btn btn-primary btn-block">Acessar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <form>
+                        <div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="icheck-primary">
+                                        <button type="submit" class="btn btn-danger btn-block">Recuperar Acesso</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.col -->
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- /.login-box -->
+
+            <!-- jQuery -->
+            <script src="../FW/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
+            <!-- Bootstrap 4 -->
+            <script src="../FW/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <!-- AdminLTE App -->
+            <script src="../FW/AdminLTE-3.0.4/dist/js/adminlte.min.js"></script>
+
     </body>
 </html>

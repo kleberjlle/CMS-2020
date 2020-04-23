@@ -8,22 +8,22 @@ function alertas($codigo){
         
     }
     if($l == 'A'){//A-> Atenção, esta ação pode ter resultados insatisfatórios
-        
-    }
-    if($l == 'I'){//I-> Informação, traz informativo do sistema
         switch ($n) {
             case '01':
-                return $msg = "I01: Email inválido.";//mensagem referente ao código passado
+                return $msg = "A01: Email inválido.";//mensagem referente ao código passado
                 break;
             case '02':
-                return $msg = "I02: Email não localizado em nossos cadastros.";//mensagem referente ao código passado
+                return $msg = "A02: Email não localizado em nossos cadastros.";//mensagem referente ao código passado
                 break;
             case '03':
-                return $msg = "I03: Senha incorreta, tente novamente.";//mensagem referente ao código passado
+                return $msg = "A03: Senha incorreta, tente novamente.";//mensagem referente ao código passado
                 break;
             default:
                 break;
         };
+    }
+    if($l == 'I'){//I-> Informação, traz informativo do sistema
+        
     }
     if($l == 'S'){//S-> Sucesso, ação realizada com sucesso
         

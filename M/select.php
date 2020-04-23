@@ -15,10 +15,10 @@ function validaEmail($email){
         if($sql>0){//se houve linhas afetadas
             return $email;
         }else{//senão
-            return alertas('I02');//email recebe falso(0)
+            return alertas('A02');//email recebe falso(0)
         }
     }else{
-        return alertas('I01');//E-> Error, A-> Atenção, I-> Informação, S-> Sucesso/ 01-> posição
+        return alertas('A01');//E-> Error, A-> Atenção, I-> Informação, S-> Sucesso/ 01-> posição
     }
     desconectaBancoDados();
 }
@@ -36,15 +36,12 @@ function validaSenha($senha,$email){
     //armazene os dados do usuário em sessões
     while ($row = mysqli_fetch_array($res)) {
         $_SESSION['usuarioAtual'] = [$row[0],$row[1],$row[2],$row[3]];//idusuarios
-        //$_SESSION[usuarioAtual] = $row[1];//nome
-        //$_SESSION[usuarioAtual] = $row[2];//sobrenome
-        //$_SESSION[usuarioAtual] = $row[3];//email
         $senhaAtual = $row[4];//senha
     }
-    if(password_verify($senha, $senhaAtual)){
+    if(password_verify($senha,$senhaAtual)){
         return true;
     }else{
-        return alertas('I03');
+        return alertas('A03');
     }
     desconectaBancoDados();   
 }
