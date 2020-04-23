@@ -32,12 +32,11 @@
                         <label class="col-form-label" for="email">
                             <?php
                                 if(isset($_GET['msg1'])){
-                                    echo "<i class=\"fas fa-bell\"></i>".$_GET['msg1'];
-                                }
-                                                       
+                                    echo "<i class=\"fas fa-bell\"></i> ".$_GET['msg1'];
+                                }                   
                             ?>
                         </label>
-                            <input type="email" name="email" class="form-control <?php if(isset($_GET['msg1'])){echo "is-warning";} if(isset($_GET['msg2'])){echo "is-valid";} ?>" id="email" placeholder="Email" required>
+                            <input type="email" name="email" class="form-control <?php if(isset($_GET['msg1'])){echo "is-warning";} if(isset($_GET['msg2'])){echo "is-valid";} ?>" <?php echo isset($_GET['email']) ? "value=\"{$_GET['email']}\"" : "" ?> id="email" placeholder="Email" required>
                         </div>
                         <div class="form-group">
                             <label class="col-form-label" for="senha">
@@ -47,22 +46,22 @@
                                 }
                                 ?>
                             </label>
-                            <input type="password" name="senha" class="form-control <?php //is-valid ?>" id="senha" placeholder="Senha" required>
+                            <input type="password" name="senha" class="form-control <?php if(isset($_GET['msg2'])){echo "is-warning";} ?>" id="senha" placeholder="Senha" required>
                         </div>
                         <div class="row">
                             <div class="col-12">
                                 <div class="icheck-primary">
-                                    <button type="submit" class="btn btn-primary btn-block">Acessar</button>
+                                    <button type="submit" class="btn btn-success btn-block">Acessar</button>
                                 </div>
                             </div>
                         </div>
                     </form>
-                    <form>
+                    <form action="recuperaAcesso.php">
                         <div>
                             <div class="row">
                                 <div class="col-12">
                                     <div class="icheck-primary">
-                                        <button type="submit" class="btn btn-danger btn-block">Recuperar Acesso</button>
+                                        <button type="submit" class="btn btn-primary btn-block">Recuperar Acesso</button>
                                     </div>
                                 </div>
                             </div>

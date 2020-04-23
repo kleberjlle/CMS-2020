@@ -14,7 +14,7 @@ if($email != $_POST['email']){
     if($login === true){//se o retorno da senha for idêntico a true
         header("Location: ../V/T/painel.php");//permita acesso ao painel
     }else{//senão
-        header("Location: ../V/index.php?msg2={$login}");;//vá para index com o erro
+        header("Location: ../V/index.php?msg2={$login}&email={$email}");;//vá para index com o erro
     }
 }
 
