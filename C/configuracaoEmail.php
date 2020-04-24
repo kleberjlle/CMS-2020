@@ -6,7 +6,7 @@ function configuracaoEmail($email){
     $emailCodificado = base64_encode($email);//codifica email
     $msg = $dataHora.$emailCodificado;//mensagem enviada via GET para recuperação de senha
     $emailPara = "$email";//email do destinatário
-    $emailDe = "a";//email do remetente, configurado no servidor do domínio
+    $emailDe = "";//email do remetente, configurado no servidor do domínio
     $emailAssunto = "KTAG: Recuperação de Senha";//assunto campo assunto do email
     $emailMensagem = "<a href=\"{$dominio}alteraSenha.php?msg={$msg}\">clique aqui</a> para recuperar sua senha";//mensagem de envio (deve ter menos de 70 caracteres)
     $emailCabecalhos =  "From: {$emailDe} \r \n"
