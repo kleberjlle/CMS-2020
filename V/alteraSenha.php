@@ -27,33 +27,30 @@
             <div class="card">
                 <div class="card-body login-card-body">
                     <p class="login-box-msg">Recuperar Acesso</p>
-                    <form action="../C/verificaRecuperaAcesso.php" method="post">
+                    <form action="../C/verificaAlteraSenha.php" method="post">
                         <div class="form-group">
-                        <label class="col-form-label" for="email">
+                        <label class="col-form-label" for="senha">
                             <?php
-                                if(isset($_GET['msg1'])){
-                                    echo "<i class=\"fas fa-bell\"></i> ".$_GET['msg1'];
-                                }
                                 if(isset($_GET['msg2'])){
                                     echo "<i class=\"fas fa-check\"></i> ".$_GET['msg2'];
                                 } 
                             ?>
                         </label>
-                            <input type="email" name="email" 
+                            <input type="password" name="senha" 
                                 <?php
-                                    if(isset($_GET['msg1'])){
+                                    if(isset($_GET['msg'])){
                                         echo " class=\"form-control is-warning\"";
                                     }
                                     if(isset($_GET['msg2'])){
                                         echo " class=\"form-control is-valid\" value=\"{$_GET['email']}\"";                                       
                                     }
                                 ?>
-                            id="email" placeholder="Email" required>
+                            id="senha" placeholder="Nova senha" required>
                         </div>
                         <div class="row">
                             <div class="col-12">
                                 <div class="icheck-primary">
-                                    <button type="submit" class="btn btn-success btn-block">Recuperar</button>
+                                    <button type="submit" class="btn btn-success btn-block">Alterar</button>
                                 </div>
                             </div>
                         </div>

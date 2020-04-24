@@ -101,14 +101,14 @@
                     </form>
                 </div>
             </div>
-            <!-- /.login-box -->
+        </div>
+        <!-- /.login-box -->
 
-            <!-- jQuery -->
-            <script src="../FW/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
-            <!-- Bootstrap 4 -->
-            <script src="../FW/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-            <!-- AdminLTE App -->
-            <script src="../FW/AdminLTE-3.0.4/dist/js/adminlte.min.js"></script>
-
+        <!-- jQuery -->
+        <script src="../FW/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
+        <!-- Bootstrap 4 -->
+        <script src="../FW/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../FW/AdminLTE-3.0.4/dist/js/adminlte.min.js"></script>
     </body>
 </html>
