@@ -29,55 +29,59 @@
                     <p class="login-box-msg">Área Restrita</p>
                     <form action="../C/verificaIndex.php" method="post">
                         <div class="form-group">
-                        <label class="col-form-label" for="email">
-                            <?php
-                            //se tiver recebido msg1 via GET
-                                if(isset($_GET['msg1'])){
-                                    echo "<i class=\"fas fa-bell\"></i> {$_GET['msg1']}";//mostre ícone bell e a mensagem do referido erro
-                                }                                
-                            ?>
-                        </label>
-                            <input type="email" name="email"  
+                            <label class="col-form-label" for="email">
                                 <?php
-                                    //se tiver recebido algo diferente de msg1 e diferente de email via GET
-                                    if( !isset($_GET['email']) &&
-                                        !isset($_GET['msg1'])){
-                                        echo "class=\"form-control\"";//mostre o campo sem tratamento de alerts
-                                    }
-                                    //se tiver recebido msg1 via GET
-                                    if(isset($_GET['msg1'])){
-                                        echo "class=\"form-control is-warning\"";//mostre o campo de cor amarela(warning)
-                                    }
-                                    //se tiver recebido msg2 via GET
-                                    if(isset($_GET['email'])){
-                                        echo "class=\"form-control is-valid\"";//mostre o campo de cor verde(valid)                                        
-                                    }
-                                    //se tiver recebido email via GET
-                                    if(isset($_GET['email'])){
-                                        echo "value=\"{$_GET['email']}\"";//preencha o campo com o email já validado
-                                    }
+                                //se tiver recebido msg1 via GET
+                                if (isset($_GET['msg1'])) {
+                                    echo "<i class=\"fas fa-bell\"></i> {$_GET['msg1']}"; //mostre ícone bell e a mensagem do referido erro
+                                }
                                 ?>
-                            id="email" placeholder="Email" required>    
+                            </label>
+                            <input type="email" name="email"  
+                            <?php
+                            //se tiver recebido algo diferente de msg1 e diferente de email via GET
+                            if (!isset($_GET['email']) &&
+                                    !isset($_GET['msg1'])) {
+                                echo "class=\"form-control\""; //mostre o campo sem tratamento de alerts
+                            }
+                            //se tiver recebido msg1 via GET
+                            if (isset($_GET['msg1'])) {
+                                echo "class=\"form-control is-warning\""; //mostre o campo de cor amarela(warning)
+                            }
+                            //se tiver recebido msg2 via GET
+                            if (isset($_GET['email'])) {
+                                echo "class=\"form-control is-valid\""; //mostre o campo de cor verde(valid)                                        
+                            }
+                            //se tiver recebido email via GET
+                            if (isset($_GET['email'])) {
+                                echo "value=\"{$_GET['email']}\""; //preencha o campo com o email já validado
+                            }
+                            //se tiver recebido erro via GET
+                            if (isset($_GET['erro'])) {
+                                echo "class=\"form-control is-valid\""; //mostre o campo de cor verde(valid)        
+                            }
+                            ?>
+                                   id="email" placeholder="Email" required>    
                         </div>
                         <div class="form-group">
                             <label class="col-form-label" for="senha">
                                 <?php
                                 //se tiver recebido msg2 via GET
-                                if(isset($_GET['msg2'])){
-                                    echo "<i class=\"fas fa-bell\"></i> ".$_GET['msg2'];//mostre o ícone check e a referida mensagem de erro
+                                if (isset($_GET['msg2'])) {
+                                    echo "<i class=\"fas fa-bell\"></i> " . $_GET['msg2']; //mostre o ícone check e a referida mensagem de erro
                                 }
                                 ?>
                             </label>
                             <input type="password" name="senha"
-                                <?php
-                                //se tiver recebido msg2 via GET
-                                if(isset($_GET['msg2'])){
-                                    echo " class=\"form-control is-warning\"";//mostre o campo de cor amarela
-                                }else{//senão
-                                    echo " class=\"form-control\"";//mostre o campo sem tratamento de alerts
-                                }
-                                ?>
-                            id="senha" placeholder="Senha" required>
+                            <?php
+                            //se tiver recebido msg2 via GET
+                            if (isset($_GET['msg2'])) {
+                                echo " class=\"form-control is-warning\""; //mostre o campo de cor amarela
+                            } else {//senão
+                                echo " class=\"form-control\""; //mostre o campo sem tratamento de alerts
+                            }
+                            ?>
+                                   id="senha" placeholder="Senha" required>
                         </div>
                         <div class="row">
                             <div class="col-12">
@@ -100,6 +104,16 @@
                         </div>
                     </form>
                 </div>
+            </div>
+            <div class = "alert alert-danger alert-dismissible">
+                <button type = "button" class = "close" data-dismiss = "alert" aria-hidden = "true">&times;
+                </button>
+                <h5><i class = "icon fas fa-ban"></i> Erro Fatal!</h5>
+                <?php
+                    if (isset($_GET['erro'])) {
+                        echo $_GET['erro'];
+                    }
+                ?>
             </div>
         </div>
         <!-- /.login-box -->

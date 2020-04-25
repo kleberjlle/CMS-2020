@@ -1,4 +1,17 @@
 <!DOCTYPE html>
+<?php
+    $_GET['msg1'] = base64_encode(date("Y-m-d H:i:s"));//teste
+    $_GET['msg2'] = base64_encode("kleberjlle@gmail.com");//teste
+
+    if(isset($_GET['msg1']) || isset($_GET['msg2'])){
+        $data = base64_decode($_GET['msg1']);
+        $email = base64_decode($_GET['msg2']);
+    }else{
+        $ip = filter_var($_SERVER["REMOTE_ADDR"], FILTER_VALIDATE_IP);
+        $erro = "Tentativa de acesso indevido pelo endereço de IP: {$ip}.";
+        header("Location: index.php?erro={$erro}");
+    }
+?>
 <html>
     <head>
         <meta charset="utf-8">
@@ -29,28 +42,15 @@
                     <p class="login-box-msg">Recuperar Acesso</p>
                     <form action="../C/verificaAlteraSenha.php" method="post">
                         <div class="form-group">
-                        <label class="col-form-label" for="senha">
-                            <?php
-                                if(isset($_GET['msg2'])){
-                                    echo "<i class=\"fas fa-check\"></i> ".$_GET['msg2'];
-                                } 
-                            ?>
-                        </label>
-                            <input type="password" name="senha" 
-                                <?php
-                                    if(isset($_GET['msg'])){
-                                        echo " class=\"form-control is-warning\"";
-                                    }
-                                    if(isset($_GET['msg2'])){
-                                        echo " class=\"form-control is-valid\" value=\"{$_GET['email']}\"";                                       
-                                    }
-                                ?>
-                            id="senha" placeholder="Nova senha" required>
+                            <label class="col-form-label" for="senha"></label>
+                            <input type="password" name="senha" class="form-control" id="senha" placeholder="Nova senha" autofocus required>
+                            <input type="hidden" name="email" value="<?php echo $email; ?>" class="form-control" required>
+                            <input type="hidden" name="data" value="<?php echo $data; ?>" class="form-control" required>
                         </div>
                         <div class="row">
                             <div class="col-12">
                                 <div class="icheck-primary">
-                                    <button type="submit" class="btn btn-success btn-block">Alterar</button>
+                                    <button type="submit" class="btn btn-success btn-block">Alterar Senha</button>
                                 </div>
                             </div>
                         </div>
