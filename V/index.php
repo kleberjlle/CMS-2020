@@ -39,29 +39,29 @@
                             </label>
                             <input type="email" name="email"  
                             <?php
-                            //se tiver recebido algo diferente de msg1 e diferente de email via GET
-                            if (!isset($_GET['email']) &&
-                                    !isset($_GET['msg1'])) {
-                                echo "class=\"form-control\""; //mostre o campo sem tratamento de alerts
-                            }
-                            //se tiver recebido msg1 via GET
-                            if (isset($_GET['msg1'])) {
-                                echo "class=\"form-control is-warning\""; //mostre o campo de cor amarela(warning)
-                            }
-                            //se tiver recebido msg2 via GET
-                            if (isset($_GET['email'])) {
-                                echo "class=\"form-control is-valid\""; //mostre o campo de cor verde(valid)                                        
-                            }
-                            //se tiver recebido email via GET
-                            if (isset($_GET['email'])) {
-                                echo "value=\"{$_GET['email']}\""; //preencha o campo com o email já validado
-                            }
-                            //se tiver recebido erro via GET
-                            if (isset($_GET['erro'])) {
-                                echo "class=\"form-control is-valid\""; //mostre o campo de cor verde(valid)        
-                            }
+                                //se tiver recebido algo diferente de msg1 e diferente de email via GET
+                                if (!isset($_GET['email']) &&
+                                        !isset($_GET['msg1'])) {
+                                    echo "class=\"form-control\""; //mostre o campo sem tratamento de alerts
+                                }
+                                //se tiver recebido msg1 via GET
+                                if (isset($_GET['msg1'])) {
+                                    echo "class=\"form-control is-warning\""; //mostre o campo de cor amarela(warning)
+                                }
+                                //se tiver recebido msg2 via GET
+                                if (isset($_GET['email'])) {
+                                    echo "class=\"form-control is-valid\""; //mostre o campo de cor verde(valid)                                        
+                                }
+                                //se tiver recebido email via GET
+                                if (isset($_GET['email'])) {
+                                    echo "value=\"{$_GET['email']}\""; //preencha o campo com o email já validado
+                                }
+                                //se tiver recebido erro via GET
+                                if (isset($_GET['erro'])) {
+                                    echo "class=\"form-control is-valid\""; //mostre o campo de cor verde(valid)        
+                                }
                             ?>
-                                   id="email" placeholder="Email" required>    
+                            id="email" placeholder="Email" required>    
                         </div>
                         <div class="form-group">
                             <label class="col-form-label" for="senha">
@@ -105,16 +105,20 @@
                     </form>
                 </div>
             </div>
-            <div class = "alert alert-danger alert-dismissible">
-                <button type = "button" class = "close" data-dismiss = "alert" aria-hidden = "true">&times;
-                </button>
-                <h5><i class = "icon fas fa-ban"></i> Erro Fatal!</h5>
-                <?php
-                    if (isset($_GET['erro'])) {
-                        echo $_GET['erro'];
-                    }
-                ?>
-            </div>
+            <?php
+            //se receber a variável erro via GET
+                if (isset($_GET['erro'])) {
+                //indente código de erro, com a referida mensagem
+                echo <<<HTML
+                    <div class="alert alert-danger alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <h5><i class="icon fas fa-ban"></i> Erro Fatal!</h5>
+                            {$_GET['erro']}
+                    </div>
+HTML;    
+            
+                }
+            ?>
         </div>
         <!-- /.login-box -->
 

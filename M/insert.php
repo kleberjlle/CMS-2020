@@ -1,4 +1,9 @@
 <?php
+//insere nova senha para usuário que esqueceram a senha
+function insertAleteraSenha($data,$email,$senha){
+    
+}
+//responsável pela configuração inicial do BD
 function populaTabelas(){
     $email = 'kleberjlle@gmail.com';//email padrão de cadastro
     $senha = password_hash('123', PASSWORD_BCRYPT);//senha inicial do email cadastrado

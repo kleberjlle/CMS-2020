@@ -2,14 +2,14 @@
 <?php
     $_GET['msg1'] = base64_encode(date("Y-m-d H:i:s"));//teste
     $_GET['msg2'] = base64_encode("kleberjlle@gmail.com");//teste
-
-    if(isset($_GET['msg1']) || isset($_GET['msg2'])){
-        $data = base64_decode($_GET['msg1']);
-        $email = base64_decode($_GET['msg2']);
+//se recbeu variável msg1 e msg2 via GET
+    if(isset($_GET['msg1']) && isset($_GET['msg2'])){
+        $data = base64_decode($_GET['msg1']);//decodifica msg1 e armazena na data
+        $email = base64_decode($_GET['msg2']);//decodifica msg2 e armazena no email
     }else{
-        $ip = filter_var($_SERVER["REMOTE_ADDR"], FILTER_VALIDATE_IP);
-        $erro = "Tentativa de acesso indevido pelo endereço de IP: {$ip}.";
-        header("Location: index.php?erro={$erro}");
+        $ip = filter_var($_SERVER["REMOTE_ADDR"], FILTER_VALIDATE_IP);//armazena o IP de quem tentar acessar a página
+        $erro = alertas('E06').$ip;//mensagem de erro com o endereço de IP de acesso
+        header("Location: index.php?erro={$erro}");//redireciona para a página idex com a mensagem de erro
     }
 ?>
 <html>
