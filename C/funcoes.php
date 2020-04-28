@@ -1,4 +1,9 @@
 <?php
+//configura timezone
+function timezone(){
+    date_default_timezone_set('America/Sao_Paulo');
+}
+
 //gera mensagens de alertas de acordo com o código passado
 function alertas($codigo){
     $l = substr($codigo, 0, -2);//extrai o primeiro caracter do código
@@ -20,6 +25,9 @@ function alertas($codigo){
                 break;
             case '05':
                 return $msg = "E05: O sistema não possui um cabeçalho de email configurado.";//mensagem referente ao código passado
+                break;
+            case '06':
+                return $msg = "E06: Tentativa indevida de acesso ao sistema.<br /> Endereço de IP: ";//mensagem referente ao código passado
                 break;
             default:
                 return $msg = "Erro Fatal: Mensagem de alerta não configurado.";
