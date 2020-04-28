@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -41,7 +40,7 @@
                         <a href="#" class="nav-link">Sobre</a>
                     </li>
                     <li class="nav-item d-none d-sm-inline-block">
-                        <a href="#" class="nav-link">Sair</a>
+                        <a href="../../C/encerraSessão.php" class="nav-link">Sair</a>
                     </li>
                 </ul>
                 <!-- Right navbar links -->
@@ -118,7 +117,7 @@
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link active">
+                                        <a href="#" class="nav-link">
                                            <ion-icon name="person-add" size="small"></ion-icon> <!--<i class="far fa-circle nav-icon"></i>-->
                                             <p>Cadastrar</p>
                                         </a>
