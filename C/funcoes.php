@@ -1,18 +1,15 @@
 <?php
-<<<<<<< HEAD
-//configura timezone
-function timezone(){
-    date_default_timezone_set('America/Sao_Paulo');
-}
-
-=======
 //encerra sessoes e faz logout
 function sairSistema(){
     session_start();
     session_destroy();
     header("location: ../V/index.php");
 }
->>>>>>> origin/master
+//configura timezone
+function timezone(){
+    date_default_timezone_set('America/Sao_Paulo');
+}
+
 //gera mensagens de alertas de acordo com o código passado
 function alertas($codigo){
     $l = substr($codigo, 0, -2);//extrai o primeiro caracter do código
