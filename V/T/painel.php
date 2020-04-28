@@ -40,7 +40,7 @@
                         <a href="#" class="nav-link">Sobre</a>
                     </li>
                     <li class="nav-item d-none d-sm-inline-block">
-                        <a href="#" class="nav-link">Sair</a>
+                        <a href="../../C/sair.php" class="nav-link">Sair</a>
                     </li>
                 </ul>
                 <!-- Right navbar links -->
@@ -99,7 +99,10 @@
                             <img src="../../FW/AdminLTE-3.0.4/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                         </div>
                         <div class="info">
-                            <a href="#" class="d-block">Alexander Pierce</a>
+                            <a href="#" class="d-block"><?php
+session_start();
+echo $_SESSION['usuarioAtual'][1];
+?></a>
                         </div>
                     </div>
                     <!-- Sidebar Menu -->
@@ -117,7 +120,7 @@
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="#" class="nav-link active">
+                                        <a href="#" class="nav-link">
                                            <ion-icon name="person-add" size="small"></ion-icon> <!--<i class="far fa-circle nav-icon"></i>-->
                                             <p>Cadastrar</p>
                                         </a>
