@@ -1,4 +1,10 @@
 <?php
+//encerra sessoes e faz logout
+function sairSistema(){
+    session_start();
+    session_destroy();
+    header("location: ../V/index.php");
+}
 //gera mensagens de alertas de acordo com o código passado
 function alertas($codigo){
     $l = substr($codigo, 0, -2);//extrai o primeiro caracter do código

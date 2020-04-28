@@ -40,7 +40,7 @@
                         <a href="#" class="nav-link">Sobre</a>
                     </li>
                     <li class="nav-item d-none d-sm-inline-block">
-                        <a href="../../C/encerraSessão.php" class="nav-link">Sair</a>
+                        <a href="../../C/sair.php" class="nav-link">Sair</a>
                     </li>
                 </ul>
                 <!-- Right navbar links -->
@@ -99,7 +99,10 @@
                             <img src="../../FW/AdminLTE-3.0.4/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                         </div>
                         <div class="info">
-                            <a href="#" class="d-block">Alexander Pierce</a>
+                            <a href="#" class="d-block"><?php
+session_start();
+echo $_SESSION['usuarioAtual'][1];
+?></a>
                         </div>
                     </div>
                     <!-- Sidebar Menu -->
