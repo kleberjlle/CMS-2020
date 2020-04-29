@@ -12,7 +12,6 @@ function updateAlteraSenha($data,$email,$senha){
         echo "arquivo {$arquivo} não existe";
     }
     
-    
     //$query = "UPDATE usuarios SET senha='$senha' WHERE email='$email'";
     //mysqli_query($link, $query);
 }
