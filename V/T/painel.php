@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+session_start();
+?>
 <html>
     <head>
         <meta charset="utf-8">
@@ -99,10 +102,11 @@
                             <img src="../../FW/AdminLTE-3.0.4/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                         </div>
                         <div class="info">
-                            <a href="#" class="d-block"><?php
-session_start();
-echo $_SESSION['usuarioAtual'][1];
-?></a>
+                            <a href="#" class="d-block">    
+                            <?php
+                            echo $_SESSION['usuarioAtual'][1];
+                            ?>
+                            </a>
                         </div>
                     </div>
                     <!-- Sidebar Menu -->
