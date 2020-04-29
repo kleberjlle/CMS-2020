@@ -64,6 +64,9 @@ function alertas($codigo){
             case '01':
                 return $msg = "S01: Acesse seu email para alterar sua senha.";//mensagem referente ao código passado
                 break;
+            case '02':
+                return $msg = "S02: Senha alterada com sucesso.";//mensagem referente ao código passado
+                break;
             default:
                 return $msg = "Erro Fatal: Mensagem de alerta não configurado.";//caso as confignurações de email estejam incorretas
                 break;

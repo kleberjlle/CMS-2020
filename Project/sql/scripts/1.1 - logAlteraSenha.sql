@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `cms-2020`.`logAlteraSenha` (
   `dataHora` DATETIME NOT NULL,
   `usuarios_idusuarios` INT NOT NULL,
   PRIMARY KEY (`idlogAlteraSenha`, `usuarios_idusuarios`),
-  INDEX `fk_logAlteraSenha_usuarios_idx` (`usuarios_idusuarios` ASC) VISIBLE,
+  INDEX `fk_logAlteraSenha_usuarios_idx` (`usuarios_idusuarios` ASC),
   CONSTRAINT `fk_logAlteraSenha_usuarios`
     FOREIGN KEY (`usuarios_idusuarios`)
     REFERENCES `cms-2020`.`usuarios` (`idusuarios`)

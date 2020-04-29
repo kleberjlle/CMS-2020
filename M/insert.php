@@ -25,3 +25,13 @@ function populaTabelas(){
         return $msg;
     }
 }
+//insere dados na tabela logAlteraSenha
+function insertLogAlteraSenha($dataHora,$id){
+    $link = conectaBancoDados();//conecta ao bd
+    
+    $query = "INSERT INTO logAlteraSenha (dataHora,usuarios_idusuarios) "//insira na tabela usuarios os seguintes dados
+            . "VALUES ('{$dataHora}', '{$id}')";
+    mysqli_query($link, $query);//executa a query anterior
+    desconectaBancoDados();
+    return alertas('S02');
+}

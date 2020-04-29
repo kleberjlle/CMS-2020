@@ -1,4 +1,21 @@
 <?php
+//seleciona o id do usuario
+function selectAlteraSenha($email){
+    $link = conectaBancoDados();//armazena conexão do BD
+       
+    $query = "SELECT idusuarios "//selecione todos
+            . "FROM usuarios "//da tabela usuarios
+            . "WHERE email='{$email}' "//quando email, for igual ao email passado
+            . "LIMIT 1";//limite a consulta a 1 registro
+    $res = mysqli_query($link,$query);//executa a query anterior
+    
+    //armazene os dados do usuário em sessões
+    while ($row = mysqli_fetch_array($res)) {
+        return $id = $row[0];//idusuarios
+    }
+    desconectaBancoDados();
+}
+
 //verifica login
 function validaEmail($email){
     if(filter_var($email, FILTER_VALIDATE_EMAIL)){//se realmente é um email

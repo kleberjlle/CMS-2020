@@ -1,17 +1,13 @@
 <?php
 //atualiza senha
-function updateAlteraSenha($data,$email,$senha){
-    //verifica se existe o arquivo de log
-    $file = "http://127.0.0.1/CMS-2020/C/funcoes.php";
+function updateAlteraSenha($dataHora,$email,$senha){
+    $link = conectaBancoDados();//conecta ao bd
+    $query = "UPDATE usuarios "//atualize a tabela usuarios
+            . "SET senha='$senha' "//configurando os seguintes campos
+            . "WHERE email='$email'";//quando email for igual a email passado
+    $res = mysqli_query($link,$query);//retorna o resultado
     
-    if(file_exists($arquivo)){
-        parse_url($arquivo);
-        //include_once '../LOG/alteraSenha.txt';
-        echo "arquivo {$arquivo} existe";
-    }else{
-        echo "arquivo {$arquivo} não existe";
-    }
-    
-    //$query = "UPDATE usuarios SET senha='$senha' WHERE email='$email'";
-    //mysqli_query($link, $query);
+    $id = selectAlteraSenha($email);//função que retorna o ID do email informado
+    desconectaBancoDados();
+    return insertLogAlteraSenha($dataHora,$id);
 }
