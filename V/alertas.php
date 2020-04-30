@@ -25,17 +25,23 @@
             <!-- /.login-logo -->
             <div class="card">
                 <div class="card-body login-card-body">
-                    <div class = "alert alert-danger alert-dismissible">
-                        <button type = "button" class = "close" data-dismiss = "alert" aria-hidden = "true">&times;
-                        </button>
-                        <h5><i class = "icon fas fa-ban"></i> Erro Fatal!</h5>
-                            <?php
-                            if (isset($_GET['msg'])) {
-                                echo "Desculpe o transtorno, contate nosso suporte e informe o seguinte erro:<br />"
-                                . "{$_GET['msg']}";
-                            }
-                            ?>
+                    <?php
+                    if(isset($_GET['codigo']) && isset($_GET['msg'])){
+                        if($_GET['codigo'] == "S03"){
+                            $status = "success";
+                            $icone = "check";
+                            $titulo = "Sucesso!";
+                            $msg = $_GET['msg'];
+                        }
+                    <<<HTML
+                    <div class ="alert alert-$status alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        <h5><i class="icon fas fa-$icone"></i> $titulo</h5>
+                            $msg
                     </div>
+HTML;
+                    }
+                    ?>
                 </div>
             </div>
         </div>

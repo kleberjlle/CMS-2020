@@ -39,13 +39,17 @@
                                 } 
                             ?>
                         </label>
-                            <input type="email" name="email" 
+                            <input type="email" name="email"
                                 <?php
                                     if(isset($_GET['msg1'])){
-                                        echo " class=\"form-control is-warning\"";
+                                        echo " class=\"form-control is-warning\" ";
                                     }
                                     if(isset($_GET['msg2'])){
-                                        echo " class=\"form-control is-valid\" value=\"{$_GET['email']}\"";                                       
+                                        echo " class=\"form-control is-valid\" value=\"{$_GET['email']}\" ";                                       
+                                    }
+                                    if( !isset($_GET['msg1']) &&
+                                        !isset($_GET['msg2'])){
+                                        echo " class=\"form-control ";
                                     }
                                 ?>
                             id="email" placeholder="Email" required>
