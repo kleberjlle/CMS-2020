@@ -14,6 +14,7 @@ function populaTabelas(){
         $query = "INSERT INTO usuarios (nome, sobrenome, email, senha) "//insira na tabela usuarios os seguintes dados
             . "VALUES ('Kleber','Pereira de Almeida', 'kleberjlle@gmail.com', '{$senha}')";
         mysqli_query($link, $query);//executa a query anterior
+        desconectaBancoDados();
         return alertas('S03');
     }
 }

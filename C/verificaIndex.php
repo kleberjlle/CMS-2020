@@ -1,5 +1,6 @@
 <?php
 include_once '../M/conexao.php';//incorpora arquivo de conexão com BD
+include_once '../M/insert.php';
 include_once '../M/select.php';//incorpora arquivo de select
 include_once './funcoes.php';//incorpora arquivo responsável pelas funções
 include_once '../M/desconexao.php';
@@ -24,5 +25,5 @@ if($config === true){//se as tabelas já estiverem populadas
     }
 }else{//senão
     $codigo = "S03";
-    header("Location: ../V/alertas.php?codigo={$codigo}&msg={$msg}");
+    header("Location: ../V/alertas.php?codigo={$codigo}&msg={$config}");
 }

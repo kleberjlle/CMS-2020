@@ -1,9 +1,4 @@
 <?php
-//testa a instalação do sistema
-function validaSistema(){
-    
-}
-
 //encerra sessoes e faz logout
 function sairSistema(){
     session_start();
@@ -73,7 +68,7 @@ function alertas($codigo){
                 return $msg = "S02: Senha alterada com sucesso.";//mensagem referente ao código passado
                 break;
             case '03':
-                return $msg = "S03: Tabela de acesso configurada com sucesso (email: kleberjlle@gmail.com, senha: 123).";//mensagem referente ao código passado
+                return $msg = "S03: Tabela de acesso configurada (email: kleberjlle@gmail.com, senha: 123).<br /><a href=\"./index.php\">Clique aqui</a>";//mensagem referente ao código passado
                 break;
             default:
                 return $msg = "Erro Fatal: Mensagem de alerta não configurado.";//caso as confignurações de email estejam incorretas
