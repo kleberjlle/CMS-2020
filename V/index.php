@@ -62,6 +62,7 @@
                                 }
                             ?>
                             id="email" placeholder="Email" required>    
+                            <input type="hidden" name="pagina" value="index.php" />
                         </div>
                         <div class="form-group">
                             <label class="col-form-label" for="senha">

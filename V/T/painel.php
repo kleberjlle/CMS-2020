@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <?php
 session_start();
+include_once '../../C/funcoes.php';
+
+if(isset($_SESSION['protege']) != "verificaIndex.php"){
+    sairSistema(); 
+}
 ?>
 <html>
     <head>

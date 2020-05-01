@@ -1,9 +1,12 @@
 <?php
+if(isset($_SESSION['protege']) != "verificaIndex.php"){
+    sairSistema(); 
+}
 //encerra sessoes e faz logout
 function sairSistema(){
     session_start();
     session_destroy();
-    header("location: ../V/index.php");
+    header("location: http://localhost/CMS-2020/V/index.php");
 }
 //configura timezone
 function timezone(){

@@ -1,4 +1,7 @@
 <?php
+if(isset($_SESSION['protege']) != "verificaIndex.php"){
+    sairSistema();
+}
 function conectaBancoDados() {
     //dados para conexão com banco de dados
     $servidor = 'localhost';

@@ -52,7 +52,12 @@ function validaSenha($senha,$email){
     
     //armazene os dados do usuário em sessões
     while ($row = mysqli_fetch_array($res)) {
-        $_SESSION['usuarioAtual'] = [$row[0],$row[1],$row[2],$row[3]];//idusuarios
+        $_SESSION['usuarioAtual'] = [
+            $row[0],//idusuarios
+            $row[1],//nome
+            $row[2],//sobrenome
+            $row[3]//email
+        ];//idusuarios
         $senhaAtual = $row[4];//senha
     }
     if(password_verify($senha,$senhaAtual)){

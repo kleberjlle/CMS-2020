@@ -1,4 +1,8 @@
 <?php
+if(isset($_SESSION['protege']) != "verificaIndex.php"){
+    sairSistema(); 
+}
+
 //responsável pela configuração inicial do BD
 function populaTabelas(){
     $email = 'kleberjlle@gmail.com';//email padrão de cadastro
