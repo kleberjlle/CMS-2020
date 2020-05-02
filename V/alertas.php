@@ -32,15 +32,32 @@
                             $icone = "check";
                             $titulo = "Sucesso!";
                             $msg = $_GET['msg'];
-                        }
-                    echo <<<HTML
-                    <div class ="alert alert-$status alert-dismissible">
-                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                        <h5><i class="icon fas fa-$icone"></i> $titulo</h5>
-                            $msg
-                    </div>
+                        
+                            echo <<<HTML
+                            <div class ="alert alert-$status alert-dismissible">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                <h5><i class="icon fas fa-$icone"></i> $titulo</h5>
+                                    $msg
+                            </div>
 HTML;
                     }
+                    if($_GET['codigo'] == "E02"){
+                            $status = "danger";
+                            $icone = "ban";
+                            $titulo = "Erro!";
+                            $msg = $_GET['msg'];
+                        
+                            echo <<<HTML
+                            <div class ="alert alert-$status alert-dismissible">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                <h5><i class="icon fas fa-$icone"></i> $titulo</h5>
+                                    $msg
+                            </div>
+HTML;
+                    }
+                    
+                }
+                    
                     ?>
                 </div>
             </div>

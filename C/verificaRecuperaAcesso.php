@@ -1,4 +1,12 @@
 <?php
+session_start();//inicia as sessões
+if(isset($_POST['pagina']) != "recuperaAcesso.php"){
+    session_destroy();
+    header("Location: ../V/index.php");
+}
+
+$_SESSION['protege'] = basename(__FILE__);//armazena o nome do arquivo atual
+
 include_once '../M/conexao.php';
 include_once '../M/desconexao.php';
 include_once '../M/select.php';
@@ -13,9 +21,11 @@ if($email != $_POST['email']){
 }else{//senão
     $msg = configuracaoEmail($email);
     if($msg[0] == 'E'){
-        header("Location: ../V/erroFatal.php?msg={$msg}");//vá para página de erro fatal
+        $codigo = $msg[0].$msg[1].$msg[2];
+        header("Location: ../V/alertas.php?codigo={$codigo}&msg={$msg}");//vá para página de erro fatal
     }
     if($msg[0] == 'S'){
-        header("Location: ../V/recuperaAcesso.php?msg2={$msg}&email={$email}");//vá para página recuperaAcesso
+        $codigo = $msg[0].$msg[1].$msg[2];
+        header("Location: ../V/alertas.php?codigo={$codigo}&msg={$msg}");//vá para página recuperaAcesso
     }
 }

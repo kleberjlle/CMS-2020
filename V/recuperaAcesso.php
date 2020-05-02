@@ -53,6 +53,7 @@
                                     }
                                 ?>
                             id="email" placeholder="Email" required>
+                            <input type="hidden" name="pagina" value="recuperaAcesso.php"/>
                         </div>
                         <div class="row">
                             <div class="col-12">

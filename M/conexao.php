@@ -1,5 +1,6 @@
 <?php
-if(isset($_SESSION['protege']) != "verificaIndex.php"){
+if(isset($_SESSION['protege']) != "verificaIndex.php" ||
+        isset($_SESSION['protege']) != "verificaRecuperaAcesso.php"){
     sairSistema();
 }
 function conectaBancoDados() {
