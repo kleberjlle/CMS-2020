@@ -1,4 +1,8 @@
 <?php
+if(isset($_SESSION['protege']) != "verificaIndex.php"){
+    include_once './sair.php';
+    sairSistema(); 
+}
 function configuracaoEmail($email){
     //configuração de envio de email pelo sistema
     $dominio = "http://www.itapoainfo.com.br/V/";//caminho do dominio do site

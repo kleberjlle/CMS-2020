@@ -27,6 +27,7 @@
                 <div class="card-body login-card-body">
                     <?php
                     if(isset($_GET['codigo']) && isset($_GET['msg'])){
+                        //mensagens de (S)ucesso
                         if($_GET['codigo'] == "S03"){
                             $status = "success";
                             $icone = "check";
@@ -40,8 +41,10 @@
                                     $msg
                             </div>
 HTML;
-                    }
-                    if($_GET['codigo'] == "E02"){
+                        }
+                    //mensagens de (E)rro
+                    if( $_GET['codigo'] == "E02" ||
+                        $_GET['codigo'] == "E06"){
                             $status = "danger";
                             $icone = "ban";
                             $titulo = "Erro!";

@@ -46,6 +46,7 @@
                             <input type="password" name="senha" class="form-control" id="senha" placeholder="Nova senha" autofocus required>
                             <input type="hidden" name="email" value="<?php echo $email; ?>" class="form-control" required>
                             <input type="hidden" name="data" value="<?php echo $data; ?>" class="form-control" required>
+                            <input type="hidden" name="pagina" value="alteraSenha.php" class="form-control" required>
                         </div>
                         <div class="row">
                             <div class="col-12">
