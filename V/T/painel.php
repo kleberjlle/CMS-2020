@@ -69,18 +69,17 @@
                                         Brad Diesel
                                         <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
                                     </h3>
-                                    <p class="text-sm">Call me whenever you can...</p>
-                                    <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+                                    <p class="text-sm">Ligue-me sempre que puder ...</p>
+                                    <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i>4 horas atrás</p>
                                 </div>
                             </div>
                             <!-- Message End -->
                         </a>
 
                         <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+                        <a href="#" class="dropdown-item dropdown-footer">Ver todas as mensagens</a>
                     </div>
                 </li>
-
                 <!--
                 <li class="nav-item">
                     <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#">
@@ -156,11 +155,11 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0 text-dark">Dashboard</h1>
+                            <h1 class="m-0 text-dark">Perfil</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">Perfil</a></li>
                                 <li class="breadcrumb-item active">Dashboard v1</li>
                             </ol>
                         </div><!-- /.col -->
@@ -168,40 +167,79 @@
                 </div><!-- /.container-fluid -->
             </div>
             <!-- /.content-header -->
-
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
-                    <!-- Small boxes (Stat box) -->
                     <div class="row">
-                        <!-- responsavel pelas box coloridas de cima-->   
+                        <div class="col-md-4">
+                            <!-- Profile Image -->
+                            <div class="card card-primary card-outline">
+                                <div class="card-body box-profile">
+                                    <div class="text-center">
+                                        <img class="profile-user-img img-fluid img-circle"
+                                             src="../../FW/AdminLTE-3.0.4/dist/img/user4-128x128.jpg"
+                                             alt="User profile picture">
+                                    </div>
+                                    <h3 class="profile-username text-center"><?php echo $_SESSION['usuarioAtual'][1]; ?></h3>
+                                    <ul class="list-group list-group-unbordered mb-3">
+                                        <li class="list-group-item">
+                                            <b>Nome Completo</b> <a class="float-right"><?php echo $_SESSION['usuarioAtual'][1] . " " . [2]; ?></a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <b>Email</b> <a class="float-right"><?php echo $_SESSION['usuarioAtual'][3]; ?></a>
+                                        </li>
+                                       <!-- <li class="list-group-item">
+                                            <b></b> <a class="float-right"></a>
+                                        </li>-->
+                                    </ul>
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                            <!-- /.card -->
+                        </div>
+                        <!-- /.col-md-3-->
+                        <div class="col-md-8">
+                            <!-- general form elements -->
+                            <div class="card card-primary">
+                                <div class="card-header">
+                                    <h3 class="card-title">Altear dados</h3>
+                                </div>
+                                <!-- /.card-header -->
+                                <!-- form start -->
+                                <form role="form">
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <label for="">Alterar nome</label>
+                                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nome">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail1">Alterar Email</label>
+                                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Alterar Senha</label>
+                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+                                        </div>
+                                    </div>
+                                    <!-- /.card-body -->
+                                    <div class="card-footer">
+                                        <button type="submit" class="btn btn-primary">Alterar</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- /.card -->
+                        </div>
+                        <!--/.col-md-6-->
                     </div>
-                    <!-- /.row -->
-
-                    <!-- Main row -->
-                    <div class="row">
-                        <!-- Left col -->
-                        <section class="col-lg-7 connectedSortable">
-                            <!-- Custom tabs (Charts with tabs)-->
-                            <!-- responsavel pelo lado esquerdo-->
-                        </section>
-                        <!-- /.Left col -->
-
-                        <!-- right col (We are only adding the ID to make the widgets sortable)-->
-                        <section class="col-lg-5 connectedSortable">
-                            <!-- responsavel pelo lado direito-->   
-                        </section>
-                        <!-- right col -->
-                    </div>
-                    <!-- /.row (main row) -->
-                </div><!-- /.container-fluid -->
+                    <!-- /.row-->
+                </div>
+                <!-- /.container-fluid -->
             </section>
             <!-- /.content -->
         </div>
-
         <!-- /.content-wrapper -->
         <footer class="main-footer">
-            <strong>Copyright &copy; 2020-2022 <a>Kateg</a>.</strong>
+            <strong>Copyright &copy; 2020-2022 <a>Ktag</a>.</strong>
             Todos os direitos reservados.
             <div class="float-right d-none d-sm-inline-block">
                 <b>Versão</b> 0.0.0
