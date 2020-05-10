@@ -160,7 +160,6 @@
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Perfil</a></li>
-                                <li class="breadcrumb-item active">Dashboard v1</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -183,14 +182,14 @@
                                     <h3 class="profile-username text-center"><?php echo $_SESSION['usuarioAtual'][1]; ?></h3>
                                     <ul class="list-group list-group-unbordered mb-3">
                                         <li class="list-group-item">
-                                            <b>Nome Completo</b> <a class="float-right"><?php echo $_SESSION['usuarioAtual'][1] . " " . [2]; ?></a>
+                                            <b>Nome Completo</b> <a class="float-right"><?php echo $_SESSION['usuarioAtual'][1] . " " . $_SESSION['usuarioAtual'][2]; ?></a>
                                         </li>
                                         <li class="list-group-item">
                                             <b>Email</b> <a class="float-right"><?php echo $_SESSION['usuarioAtual'][3]; ?></a>
                                         </li>
-                                       <!-- <li class="list-group-item">
-                                            <b></b> <a class="float-right"></a>
-                                        </li>-->
+                                        <!-- <li class="list-group-item">
+                                             <b></b> <a class="float-right"></a>
+                                         </li>-->
                                     </ul>
                                 </div>
                                 <!-- /.card-body -->
@@ -202,23 +201,27 @@
                             <!-- general form elements -->
                             <div class="card card-primary">
                                 <div class="card-header">
-                                    <h3 class="card-title">Altear dados</h3>
+                                    <h3 class="card-title">ALTERAR DADOS</h3>
                                 </div>
                                 <!-- /.card-header -->
                                 <!-- form start -->
                                 <form role="form">
                                     <div class="card-body">
                                         <div class="form-group">
-                                            <label for="">Alterar nome</label>
-                                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nome">
+                                            <label for="nome">Nome</label>
+                                            <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome">
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Alterar Email</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                                            <label for="sobreNome">sobreNome</label>
+                                            <input type="text" name="sobreNome" class="form-control" id="sobreNome" placeholder="Sobre Nome">
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputPassword1">Alterar Senha</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+                                            <label for="email1">Email</label>
+                                            <input type="email" name="email" class="form-control" id="email" placeholder="Email">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="senha">Senha</label>
+                                            <input type="password"name="senha" class="form-control" id="senha" placeholder="Senha">
                                         </div>
                                     </div>
                                     <!-- /.card-body -->
